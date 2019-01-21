@@ -4,16 +4,16 @@
 \alias{color_picker_btn}
 \title{Color Picker with Button}
 \usage{
-color_picker_btn(inputId, label, color = "#FFFFFF",
-  picker = c("SketchPicker", "BlockPicker", "ChromePicker",
-  "CirclePicker", "CompactPicker", "GithubPicker", "HuePicker",
-  "MaterialPicker", "PhotoshopPicker", "SliderPicker", "SwatchesPicker",
-  "TwitterPicker", "AlphaPicker"), width = NULL, height = NULL)
+color_picker_btn(inputId, label, ..., picker = c("SketchPicker",
+  "BlockPicker", "ChromePicker", "CirclePicker", "CompactPicker",
+  "GithubPicker", "HuePicker", "MaterialPicker", "PhotoshopPicker",
+  "SliderPicker", "SwatchesPicker", "TwitterPicker", "AlphaPicker"),
+  width = NULL, height = NULL)
 }
 \arguments{
 \item{inputId}{Widget id to retrieve value server-side.}
 
-\item{color}{Default color.}
+\item{...}{Arguments passed to the picker.}
 
 \item{picker}{Style of the picker.}
 

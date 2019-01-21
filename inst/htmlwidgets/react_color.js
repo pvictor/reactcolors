@@ -17287,8 +17287,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_color__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-color */ "./node_modules/react-color/lib/index.js");
 /* harmony import */ var react_color__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_color__WEBPACK_IMPORTED_MODULE_1__);
-
-
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -17312,23 +17310,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var ButtonExample =
+var ReactColorBtn =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(ButtonExample, _React$Component);
+  _inherits(ReactColorBtn, _React$Component);
 
-  function ButtonExample() {
+  function ReactColorBtn() {
     var _getPrototypeOf2;
 
     var _this;
 
-    _classCallCheck(this, ButtonExample);
+    _classCallCheck(this, ReactColorBtn);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(ButtonExample)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(ReactColorBtn)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       displayColorPicker: false
@@ -17349,7 +17347,7 @@ function (_React$Component) {
     return _this;
   }
 
-  _createClass(ButtonExample, [{
+  _createClass(ReactColorBtn, [{
     key: "render",
     value: function render() {
       var popover = {
@@ -17358,7 +17356,7 @@ function (_React$Component) {
       };
       var cover = {
         position: 'fixed',
-        top: '0px',
+        top: '4px',
         right: '0px',
         bottom: '0px',
         left: '0px'
@@ -17373,14 +17371,14 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: cover,
         onClick: this.handleClose
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_color__WEBPACK_IMPORTED_MODULE_1__["ChromePicker"], null)) : null);
+      }), this.props.children) : null);
     }
   }]);
 
-  return ButtonExample;
+  return ReactColorBtn;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (ButtonExample);
+/* harmony default export */ __webpack_exports__["default"] = (ReactColorBtn);
 
 /***/ }),
 
@@ -17403,11 +17401,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-Object(reactR__WEBPACK_IMPORTED_MODULE_2__["reactWidget"])('react_color', 'output', react_color__WEBPACK_IMPORTED_MODULE_0__);
 react_color__WEBPACK_IMPORTED_MODULE_0__["ReactColorBtn"] = _ReactColorBtn__WEBPACK_IMPORTED_MODULE_1__["default"];
-Object(reactR__WEBPACK_IMPORTED_MODULE_2__["reactWidget"])('react_color_btn', 'output', {
-  ReactColorBtn: _ReactColorBtn__WEBPACK_IMPORTED_MODULE_1__["default"]
-});
+Object(reactR__WEBPACK_IMPORTED_MODULE_2__["reactWidget"])('react_color', 'output', react_color__WEBPACK_IMPORTED_MODULE_0__);
 
 /***/ }),
 

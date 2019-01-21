@@ -4,6 +4,7 @@
 #'
 #' @param inputId Widget id to retrieve value server-side.
 #' @param color Default color.
+#' @param ... Additional arguments passed to the picker.
 #' @param picker Style of the picker.
 #' @param width,height Width and height for the widget.
 #'
@@ -12,7 +13,17 @@
 #' @importFrom reactR reactMarkup component
 #'
 #' @export
-color_picker <- function(inputId, color = "#FFFFFF",
+#'
+#' @examples
+#'
+#' # May not work weel in RStudio viewer
+#' color_picker(
+#'   inputId = "mypicker",
+#'   picker = "Block",
+#'   colors = c("#EFF3FF", "#C6DBEF", "#9ECAE1",
+#'              "#6BAED6", "#3182BD", "#08519C")
+#' )
+color_picker <- function(inputId, color = "#FFFFFF", ...,
                          picker = c("SketchPicker", "BlockPicker", "ChromePicker", "CirclePicker",
                                     "CompactPicker", "GithubPicker", "HuePicker", "MaterialPicker",
                                     "PhotoshopPicker", "SliderPicker", "SwatchesPicker",
@@ -24,10 +35,10 @@ color_picker <- function(inputId, color = "#FFFFFF",
   # describe a React component to send to the browser for rendering.
   component <- component(
     name = picker,
-    varArgs = list(
+    varArgs = c(list(
       color = color,
       onChangeComplete = JS(sprintf("function(color, event) {Shiny.setInputValue('%s', color.hex);}", inputId))
-    )
+    ), list(...))
   )
 
   # create widget

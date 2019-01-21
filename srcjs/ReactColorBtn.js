@@ -1,7 +1,6 @@
-'use strict'
 
 import React, { Component } from 'react';
-import { ChromePicker } from 'react-color'
+import { AlphaPicker, BlockPicker, ChromePicker, CirclePicker, CompactPicker, GithubPicker, HuePicker, MaterialPicker, PhotoshopPicker, SketchPicker, SliderPicker, SwatchesPicker, TwitterPicker } from 'react-color';
 
 class ReactColorBtn extends React.Component {
   state = {
@@ -23,7 +22,7 @@ class ReactColorBtn extends React.Component {
     }
     const cover = {
       position: 'fixed',
-      top: '0px',
+      top: '4px',
       right: '0px',
       bottom: '0px',
       left: '0px',
@@ -33,7 +32,7 @@ class ReactColorBtn extends React.Component {
         <button onClick={ this.handleClick } class="btn btn-default">{this.props.label}</button>
         { this.state.displayColorPicker ? <div style={ popover }>
           <div style={ cover } onClick={ this.handleClose }/>
-          <ChromePicker />
+          {this.props.children}
         </div> : null }
       </span>
     )

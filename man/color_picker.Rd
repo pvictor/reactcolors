@@ -4,16 +4,18 @@
 \alias{color_picker}
 \title{Color Picker Inline}
 \usage{
-color_picker(inputId, color = "#FFFFFF", picker = c("SketchPicker",
-  "BlockPicker", "ChromePicker", "CirclePicker", "CompactPicker",
-  "GithubPicker", "HuePicker", "MaterialPicker", "PhotoshopPicker",
-  "SliderPicker", "SwatchesPicker", "TwitterPicker", "AlphaPicker"),
-  width = NULL, height = NULL)
+color_picker(inputId, color = "#FFFFFF", ...,
+  picker = c("SketchPicker", "BlockPicker", "ChromePicker",
+  "CirclePicker", "CompactPicker", "GithubPicker", "HuePicker",
+  "MaterialPicker", "PhotoshopPicker", "SliderPicker", "SwatchesPicker",
+  "TwitterPicker", "AlphaPicker"), width = NULL, height = NULL)
 }
 \arguments{
 \item{inputId}{Widget id to retrieve value server-side.}
 
 \item{color}{Default color.}
+
+\item{...}{Additional arguments passed to the picker.}
 
 \item{picker}{Style of the picker.}
 
@@ -21,4 +23,14 @@ color_picker(inputId, color = "#FFFFFF", picker = c("SketchPicker",
 }
 \description{
 Create a color picker among 13 available styles.
+}
+\examples{
+
+# May not work weel in RStudio viewer
+color_picker(
+  inputId = "mypicker",
+  picker = "Block",
+  colors = c("#EFF3FF", "#C6DBEF", "#9ECAE1",
+             "#6BAED6", "#3182BD", "#08519C")
+)
 }

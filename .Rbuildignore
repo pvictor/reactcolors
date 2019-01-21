@@ -1,2 +1,4 @@
 ^reactcolors\.Rproj$
 ^\.Rproj\.user$
+^node_modules$
+^srcjs$

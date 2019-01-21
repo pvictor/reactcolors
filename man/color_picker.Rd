@@ -4,20 +4,20 @@
 \alias{color_picker}
 \title{Color Picker Inline}
 \usage{
-color_picker(inputId, color = "#FFFFFF", ...,
-  picker = c("SketchPicker", "BlockPicker", "ChromePicker",
-  "CirclePicker", "CompactPicker", "GithubPicker", "HuePicker",
-  "MaterialPicker", "PhotoshopPicker", "SliderPicker", "SwatchesPicker",
-  "TwitterPicker", "AlphaPicker"), width = NULL, height = NULL)
+color_picker(color = "#FFFFFF", ..., picker = c("SketchPicker",
+  "BlockPicker", "ChromePicker", "CirclePicker", "CompactPicker",
+  "GithubPicker", "HuePicker", "MaterialPicker", "PhotoshopPicker",
+  "SliderPicker", "SwatchesPicker", "TwitterPicker", "AlphaPicker"),
+  input_id = NULL, width = NULL, height = NULL)
 }
 \arguments{
-\item{inputId}{Widget id to retrieve value server-side.}
-
 \item{color}{Default color.}
 
 \item{...}{Additional arguments passed to the picker.}
 
 \item{picker}{Style of the picker.}
+
+\item{input_id}{Widget id to retrieve value server-side.}
 
 \item{width, height}{Width and height for the widget.}
 }

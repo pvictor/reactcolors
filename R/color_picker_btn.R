@@ -2,9 +2,10 @@
 #'
 #' @description Create a color picker among 13 available styles.
 #'
-#' @param inputId Widget id to retrieve value server-side.
 #' @param ... Arguments passed to the picker.
 #' @param picker Style of the picker.
+#' @param label Label for the button.
+#' @param input_id Widget id to retrieve value server-side.
 #' @param width,height Width and height for the widget.
 #'
 #'
@@ -12,12 +13,13 @@
 #' @importFrom reactR reactMarkup component
 #'
 #' @export
-color_picker_btn <- function(inputId, label, ...,
-                         picker = c("SketchPicker", "BlockPicker", "ChromePicker", "CirclePicker",
-                                    "CompactPicker", "GithubPicker", "HuePicker", "MaterialPicker",
-                                    "PhotoshopPicker", "SliderPicker", "SwatchesPicker",
-                                    "TwitterPicker", "AlphaPicker"),
-                         width = NULL, height = NULL) {
+color_picker_btn <- function(...,
+                             picker = c("SketchPicker", "BlockPicker", "ChromePicker", "CirclePicker",
+                                        "CompactPicker", "GithubPicker", "HuePicker", "MaterialPicker",
+                                        "PhotoshopPicker", "SliderPicker", "SwatchesPicker",
+                                        "TwitterPicker", "AlphaPicker"),
+                             label = NULL, input_id = NULL,
+                             width = NULL, height = NULL) {
 
   picker <- match.arg(arg = picker)
 
@@ -40,6 +42,6 @@ color_picker_btn <- function(inputId, label, ...,
     width = width,
     height = height,
     package = 'reactcolors',
-    elementId = inputId
+    elementId = input_id
   )
 }

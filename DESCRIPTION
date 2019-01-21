@@ -1,0 +1,15 @@
+Package: reactcolors
+Title: Color Pickers to Use in 'Shiny' Applications
+Version: 0.0.0.9000
+Authors@R: c(person("Fanny", "Meyer", email = "fanny.meyer@dreamrs.fr", role = c("aut")),
+  person("Victor", "Perrier", email = "victor.perrier@dreamrs.fr", role = c("aut", "cre")),
+  person("Case", "Sandberg", role = "cph", comment = "react-color library"))
+Description: A collection of color pickers to use in 'Shiny' applications.
+License: GPL-3 | file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    reactR,
+    htmlwidgets,
+    htmltools
+RoxygenNote: 6.1.1

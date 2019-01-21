@@ -2,22 +2,25 @@
 % Please edit documentation in R/color_picker.R
 \name{color_picker}
 \alias{color_picker}
-\title{Color Picker Inline}
+\title{Color Picker with Button}
 \usage{
-color_picker(color = "#FFFFFF", ..., picker = c("SketchPicker",
+color_picker(color = "#112446", ..., picker = c("SketchPicker",
   "BlockPicker", "ChromePicker", "CirclePicker", "CompactPicker",
   "GithubPicker", "HuePicker", "MaterialPicker", "PhotoshopPicker",
   "SliderPicker", "SwatchesPicker", "TwitterPicker", "AlphaPicker"),
-  input_id = NULL, width = NULL, height = NULL)
+  input_id = NULL, label = NULL, inline = TRUE, width = NULL,
+  height = NULL)
 }
 \arguments{
 \item{color}{Default color.}
 
-\item{...}{Additional arguments passed to the picker.}
+\item{...}{Arguments passed to the picker.}
 
 \item{picker}{Style of the picker.}
 
 \item{input_id}{Widget id to retrieve value server-side.}
+
+\item{label}{Label for the button.}
 
 \item{width, height}{Width and height for the widget.}
 }
@@ -26,11 +29,11 @@ Create a color picker among 13 available styles.
 }
 \examples{
 
-# May not work weel in RStudio viewer
 color_picker(
-  inputId = "mypicker",
   picker = "Block",
+  triangle  = "hide",
   colors = c("#EFF3FF", "#C6DBEF", "#9ECAE1",
-             "#6BAED6", "#3182BD", "#08519C")
+             "#6BAED6", "#3182BD", "#08519C", "#112446"),
+  label = "Pick a color:"
 )
 }

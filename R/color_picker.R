@@ -1,10 +1,11 @@
-#' @title Color Picker Inline
+#' @title Color Picker with Button
 #'
 #' @description Create a color picker among 13 available styles.
 #'
 #' @param color Default color.
-#' @param ... Additional arguments passed to the picker.
+#' @param ... Arguments passed to the picker.
 #' @param picker Style of the picker.
+#' @param label Label for the button.
 #' @param input_id Widget id to retrieve value server-side.
 #' @param width,height Width and height for the widget.
 #'
@@ -17,19 +18,19 @@
 #'
 #' @examples
 #'
-#' # May not work weel in RStudio viewer
 #' color_picker(
-#'   inputId = "mypicker",
 #'   picker = "Block",
+#'   triangle  = "hide",
 #'   colors = c("#EFF3FF", "#C6DBEF", "#9ECAE1",
-#'              "#6BAED6", "#3182BD", "#08519C")
+#'              "#6BAED6", "#3182BD", "#08519C", "#112446"),
+#'   label = "Pick a color:"
 #' )
-color_picker <- function(color = "#FFFFFF", ...,
+color_picker <- function(color = "#112446", ...,
                          picker = c("SketchPicker", "BlockPicker", "ChromePicker", "CirclePicker",
                                     "CompactPicker", "GithubPicker", "HuePicker", "MaterialPicker",
                                     "PhotoshopPicker", "SliderPicker", "SwatchesPicker",
                                     "TwitterPicker", "AlphaPicker"),
-                         input_id = NULL,
+                         input_id = NULL, label = NULL, inline = TRUE,
                          width = NULL, height = NULL) {
 
   picker <- match.arg(arg = picker)
@@ -42,8 +43,14 @@ color_picker <- function(color = "#FFFFFF", ...,
 
   # describe a React component to send to the browser for rendering.
   component <- component(
-    name = picker,
-    varArgs = options
+    name = ifelse(isTRUE(inline), "ReactColorTag", "ReactColorBtn"),
+    varArgs = list(
+      label = label,
+      component(
+        name = picker,
+        varArgs = options
+      )
+    )
   )
 
   # create widget
@@ -57,7 +64,6 @@ color_picker <- function(color = "#FFFFFF", ...,
   )
 }
 
-
 # Called by HTMLWidgets to produce the widget's root element.
 react_color_html <- function(id, style, class, ...) {
   htmltools::tagList(
@@ -65,10 +71,7 @@ react_color_html <- function(id, style, class, ...) {
     reactR::html_dependency_corejs(),
     reactR::html_dependency_react(),
     reactR::html_dependency_reacttools(),
-    htmltools::tags$span(
-      id = id,
-      class = "form-group shiny-input-container shiny-input-container-inline",
-      class = class
-    )
+    htmltools::tags$div(id = id, class = class)
   )
 }
+

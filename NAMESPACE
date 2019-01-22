@@ -2,9 +2,13 @@
 
 export(block_picker)
 export(chrome_picker)
+export(circle_picker)
 export(color_picker)
+export(compact_picker)
+export(github_picker)
 export(photoshop_picker)
 export(sketch_picker)
+export(twitter_picker)
 importFrom(htmlwidgets,JS)
 importFrom(htmlwidgets,createWidget)
 importFrom(reactR,component)

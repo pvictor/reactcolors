@@ -93,6 +93,7 @@ photoshop_picker <- function(input_id, label, color = "#112446",
   )
 }
 
+
 #' Block Picker Input
 #'
 #' @template params
@@ -126,3 +127,139 @@ block_picker <- function(input_id, label, color = "#112446",
   )
 }
 
+
+#' Twitter Picker Input
+#'
+#' @template params
+#' @param colors Vector of colors to include in the widget.
+#' @param triangle Little arrow above the picker : \code{"hide"}, \code{"top-right"} or \code{"top-left"}.
+#'
+#' @export
+#'
+#' @examples
+#' # See picker in Viewer (or browser)
+#' twitter_picker("id", "Pick!", inline = TRUE)
+#'
+#' # Shiny example
+#' if (interactive()) {
+#'
+#'
+#'
+#' }
+twitter_picker <- function(input_id, label, color = "#112446",
+                           colors = NULL, triangle = "top-left",
+                           inline = FALSE, width = NULL) {
+  color_picker(
+    picker = "TwitterPicker",
+    color = color,
+    colors = colors,
+    triangle = match.arg(triangle, choices = c("top-left", "top-right", "hide")),
+    input_id = input_id,
+    label = label,
+    width = width,
+    inline = inline
+  )
+}
+
+
+#' Github Picker Input
+#'
+#' @template params
+#' @param colors Vector of colors to include in the widget.
+#' @param triangle Little arrow above the picker : \code{"hide"}, \code{"top-right"} or \code{"top-left"}.
+#'
+#' @export
+#'
+#' @examples
+#' # See picker in Viewer (or browser)
+#' github_picker("id", "Pick!", inline = TRUE)
+#'
+#' # Shiny example
+#' if (interactive()) {
+#'
+#'
+#'
+#' }
+github_picker <- function(input_id, label, color = "#112446",
+                          colors = NULL, triangle = "top-left",
+                          inline = FALSE, width = NULL) {
+  color_picker(
+    picker = "GithubPicker",
+    color = color,
+    colors = colors,
+    triangle = match.arg(triangle, choices = c("top-left", "top-right", "hide")),
+    input_id = input_id,
+    label = label,
+    width = width,
+    inline = inline
+  )
+}
+
+
+#' Compact Picker Input
+#'
+#' @template params
+#' @param colors Vector of colors to include in the widget.
+#'
+#' @export
+#'
+#' @examples
+#' # See picker in Viewer (or browser)
+#' compact_picker("id", "Pick!", inline = TRUE)
+#'
+#' # Shiny example
+#' if (interactive()) {
+#'
+#'
+#'
+#' }
+compact_picker <- function(input_id, label, color = "#112446",
+                           colors = NULL,
+                           inline = FALSE, width = NULL) {
+  color_picker(
+    picker = "CompactPicker",
+    color = color,
+    colors = colors,
+    input_id = input_id,
+    label = label,
+    width = width,
+    inline = inline
+  )
+}
+
+
+#' Circle Picker Input
+#'
+#' @template params
+#' @param colors Vector of colors to include in the widget.
+#' @param circle_size Number, Value for circle size.
+#' @param circle_spacing Number, Value for spacing between circles.
+#'
+#' @export
+#'
+#' @examples
+#' # See picker in Viewer (or browser)
+#' circle_picker("id", "Pick!", inline = TRUE)
+#'
+#' # Shiny example
+#' if (interactive()) {
+#'
+#'
+#'
+#' }
+circle_picker <- function(input_id, label, color = "#112446",
+                          colors = NULL, circle_size = 28,
+                          circle_spacing = 14,
+                          inline = FALSE, width = NULL) {
+  color_picker(
+    picker = "CirclePicker",
+    color = color,
+    colors = colors,
+    circleSize = circle_size,
+    circleSpacing = circle_spacing,
+    input_id = input_id,
+    label = label,
+    width = width,
+    inline = inline
+  )
+}

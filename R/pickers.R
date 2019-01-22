@@ -263,3 +263,99 @@ circle_picker <- function(input_id, label, color = "#112446",
     inline = inline
   )
 }
+
+
+#' Hue Picker Input
+#'
+#' @template params
+#' @param direction Direction for the widget: \code{"horizontal"} or \code{"vertical"}.
+#'
+#' @export
+#'
+#' @examples
+#' # See picker in Viewer (or browser)
+#' hue_picker("id", "Pick!", inline = TRUE)
+#'
+#' # Shiny example
+#' if (interactive()) {
+#'
+#'
+#'
+#' }
+hue_picker <- function(input_id, label, color = "#112446",
+                       direction = "horizontal",
+                       inline = FALSE, width = NULL) {
+  color_picker(
+    picker = "HuePicker",
+    color = color,
+    direction = match.arg(direction, c("horizontal", "vertical")),
+    input_id = input_id,
+    label = label,
+    width = width,
+    inline = inline
+  )
+}
+
+
+#' Swatches Picker Input
+#'
+#' @template params
+#' @param colors List of vector of colors to include in the widget.
+#'
+#' @export
+#'
+#' @examples
+#' # See picker in Viewer (or browser)
+#' swatches_picker("id", "Pick!", inline = TRUE)
+#'
+#' # Shiny example
+#' if (interactive()) {
+#'
+#'
+#'
+#' }
+swatches_picker <- function(input_id, label, color = "#112446",
+                            colors = NULL,
+                            inline = FALSE, width = NULL) {
+  color_picker(
+    picker = "SwatchesPicker",
+    color = color,
+    colors = colors,
+    input_id = input_id,
+    label = label,
+    width = width,
+    inline = inline
+  )
+}
+
+
+
+#' Slider Picker Input
+#'
+#' @template params
+#'
+# @export
+#'
+#' @examples
+#' # See picker in Viewer (or browser)
+#' slider_picker("id", "Pick!", inline = TRUE)
+#'
+#' # Shiny example
+#' if (interactive()) {
+#'
+#'
+#'
+#' }
+slider_picker <- function(input_id, label, color = "#112446",
+                          inline = FALSE, width = NULL) {
+  color_picker(
+    picker = "SliderPicker",
+    # color = color,
+    input_id = input_id,
+    label = label,
+    width = width,
+    inline = inline
+  )
+}
+
+

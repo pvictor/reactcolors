@@ -17285,8 +17285,10 @@ module.exports = function (module) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_color__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-color */ "./node_modules/react-color/lib/index.js");
-/* harmony import */ var react_color__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_color__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var reactcss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactcss */ "./node_modules/reactcss/lib/index.js");
+/* harmony import */ var reactcss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(reactcss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_color__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-color */ "./node_modules/react-color/lib/index.js");
+/* harmony import */ var react_color__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_color__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -17310,6 +17312,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var ReactColorBtn =
 /*#__PURE__*/
 function (_React$Component) {
@@ -17329,7 +17332,13 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(ReactColorBtn)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
-      displayColorPicker: false
+      displayColorPicker: false,
+      color: {
+        r: '255',
+        g: '255',
+        b: '255',
+        a: '1'
+      }
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleClick", function () {
@@ -17344,34 +17353,63 @@ function (_React$Component) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleChange", function (color) {
+      _this.setState({
+        color: color.rgb
+      });
+    });
+
     return _this;
   }
 
   _createClass(ReactColorBtn, [{
     key: "render",
     value: function render() {
-      var popover = {
-        position: 'absolute',
-        zIndex: '2'
-      };
-      var cover = {
-        position: 'fixed',
-        top: '4px',
-        right: '0px',
-        bottom: '0px',
-        left: '0px'
-      };
+      var _this2 = this;
+
+      var styles = reactcss__WEBPACK_IMPORTED_MODULE_1___default()({
+        'default': {
+          color: {
+            width: '20px',
+            height: '20px',
+            borderRadius: '50%',
+            'background-color': "rgba(".concat(this.state.color.r, ", ").concat(this.state.color.g, ", ").concat(this.state.color.b, ", ").concat(this.state.color.a, ")"),
+            display: 'inline-block',
+            'margin-left': '10px',
+            'vertical-align': 'bottom'
+          },
+          popover: {
+            position: 'absolute',
+            zIndex: '2'
+          },
+          cover: {
+            position: 'fixed',
+            top: '5px',
+            right: '0px',
+            bottom: '0px',
+            left: '0px'
+          }
+        }
+      });
+      var children = this.props.children;
+      var childrenWithProps = react__WEBPACK_IMPORTED_MODULE_0___default.a.Children.map(children, function (child) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.cloneElement(child, {
+          onChange: _this2.handleChange
+        });
+      });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         class: "form-group shiny-input-container shiny-input-container-inline"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleClick,
         class: "btn btn-default"
-      }, this.props.label), this.state.displayColorPicker ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        style: popover
+      }, this.props.label, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: styles.color
+      })), this.state.displayColorPicker ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: styles.popover
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        style: cover,
+        style: styles.cover,
         onClick: this.handleClose
-      }), this.props.children) : null);
+      }), childrenWithProps) : null);
     }
   }]);
 

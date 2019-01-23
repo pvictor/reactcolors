@@ -1,10 +1,17 @@
 
 import React, { Component } from 'react';
+import reactCSS from 'reactcss';
 import { AlphaPicker, BlockPicker, ChromePicker, CirclePicker, CompactPicker, GithubPicker, HuePicker, MaterialPicker, PhotoshopPicker, SketchPicker, SliderPicker, SwatchesPicker, TwitterPicker } from 'react-color';
 
 class ReactColorBtn extends React.Component {
   state = {
     displayColorPicker: false,
+    color: {
+      r: '255',
+      g: '255',
+      b: '255',
+      a: '1',
+    },
   };
 
   handleClick = () => {
@@ -15,24 +22,46 @@ class ReactColorBtn extends React.Component {
     this.setState({ displayColorPicker: false })
   };
 
+  handleChange = (color) => {
+    this.setState({ color: color.rgb })
+  };
+
   render() {
-    const popover = {
-      position: 'absolute',
-      zIndex: '2',
-    }
-    const cover = {
-      position: 'fixed',
-      top: '4px',
-      right: '0px',
-      bottom: '0px',
-      left: '0px',
-    }
+    const styles = reactCSS({
+      'default': {
+        color: {
+          width: '20px',
+          height: '20px',
+          borderRadius: '50%',
+          'background-color': `rgba(${ this.state.color.r }, ${ this.state.color.g }, ${ this.state.color.b }, ${ this.state.color.a })`,
+          display: 'inline-block',
+          'margin-left': '10px',
+          'vertical-align': 'bottom',
+        },
+        popover: {
+          position: 'absolute',
+          zIndex: '2',
+        },
+        cover: {
+          position: 'fixed',
+          top: '5px',
+          right: '0px',
+          bottom: '0px',
+          left: '0px',
+        },
+      },
+    });
+    const { children } = this.props;
+
+    const childrenWithProps = React.Children.map(children, child =>
+      React.cloneElement(child, { onChange: this.handleChange })
+    );
     return (
       <span class="form-group shiny-input-container shiny-input-container-inline">
-        <button onClick={ this.handleClick } class="btn btn-default">{this.props.label}</button>
-        { this.state.displayColorPicker ? <div style={ popover }>
-          <div style={ cover } onClick={ this.handleClose }/>
-          {this.props.children}
+        <button onClick={ this.handleClick } class="btn btn-default">{this.props.label}<span style={ styles.color }></span></button>
+        { this.state.displayColorPicker ? <div style={ styles.popover }>
+          <div style={ styles.cover } onClick={ this.handleClose }/>
+          {childrenWithProps}
         </div> : null }
       </span>
     )

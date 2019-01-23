@@ -17333,12 +17333,7 @@ function (_React$Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       displayColorPicker: false,
-      color: {
-        r: '255',
-        g: '255',
-        b: '255',
-        a: '1'
-      }
+      color: _this.props.color
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleClick", function () {
@@ -17355,7 +17350,7 @@ function (_React$Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleChange", function (color) {
       _this.setState({
-        color: color.rgb
+        color: color.hex
       });
     });
 
@@ -17373,7 +17368,7 @@ function (_React$Component) {
             width: '20px',
             height: '20px',
             borderRadius: '50%',
-            'background-color': "rgba(".concat(this.state.color.r, ", ").concat(this.state.color.g, ", ").concat(this.state.color.b, ", ").concat(this.state.color.a, ")"),
+            'background-color': "".concat(this.state.color),
             display: 'inline-block',
             'margin-left': '10px',
             'vertical-align': 'bottom'

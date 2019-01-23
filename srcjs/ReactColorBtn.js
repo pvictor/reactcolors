@@ -6,12 +6,7 @@ import { AlphaPicker, BlockPicker, ChromePicker, CirclePicker, CompactPicker, Gi
 class ReactColorBtn extends React.Component {
   state = {
     displayColorPicker: false,
-    color: {
-      r: '255',
-      g: '255',
-      b: '255',
-      a: '1',
-    },
+    color: this.props.color,
   };
 
   handleClick = () => {
@@ -23,7 +18,7 @@ class ReactColorBtn extends React.Component {
   };
 
   handleChange = (color) => {
-    this.setState({ color: color.rgb })
+    this.setState({ color: color.hex })
   };
 
   render() {
@@ -33,7 +28,7 @@ class ReactColorBtn extends React.Component {
           width: '20px',
           height: '20px',
           borderRadius: '50%',
-          'background-color': `rgba(${ this.state.color.r }, ${ this.state.color.g }, ${ this.state.color.b }, ${ this.state.color.a })`,
+          'background-color': `${ this.state.color }`,
           display: 'inline-block',
           'margin-left': '10px',
           'vertical-align': 'bottom',

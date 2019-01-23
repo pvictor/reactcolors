@@ -48,6 +48,7 @@ color_picker <- function(color = "#112446", ...,
     name = ifelse(isTRUE(inline), "ReactColorTag", "ReactColorBtn"),
     varArgs = list(
       label = label,
+      color = color,
       component(
         name = picker,
         varArgs = options

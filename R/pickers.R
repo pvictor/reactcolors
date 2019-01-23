@@ -13,7 +13,22 @@
 #' # Shiny example
 #' if (interactive()) {
 #'
+#'   library(shiny)
 #'
+#'   ui <- fluidPage(
+#'     tags$h2("Sketch picker color"),
+#'     sketch_picker("inline", "Pick!", inline = TRUE),
+#'     verbatimTextOutput("res_inline"),
+#'     sketch_picker("btn", "Pick!", inline = FALSE),
+#'     verbatimTextOutput("res_btn")
+#'   )
+#'
+#'   server <- function(input, output, session) {
+#'     output$res_inline <- renderPrint(input$inline)
+#'     output$res_btn <- renderPrint(input$btn)
+#'   }
+#'
+#'   shinyApp(ui, server)
 #'
 #' }
 sketch_picker <- function(input_id, label, color = "#112446", preset_colors = NULL, inline = FALSE, width = NULL) {
@@ -42,7 +57,22 @@ sketch_picker <- function(input_id, label, color = "#112446", preset_colors = NU
 #' # Shiny example
 #' if (interactive()) {
 #'
+#'   library(shiny)
 #'
+#'   ui <- fluidPage(
+#'     tags$h2("Chrome picker color"),
+#'     chrome_picker("inline", "Pick!", inline = TRUE),
+#'     verbatimTextOutput("res_inline"),
+#'     chrome_picker("btn", "Pick!", inline = FALSE),
+#'     verbatimTextOutput("res_btn")
+#'   )
+#'
+#'   server <- function(input, output, session) {
+#'     output$res_inline <- renderPrint(input$inline)
+#'     output$res_btn <- renderPrint(input$btn)
+#'   }
+#'
+#'   shinyApp(ui, server)
 #'
 #' }
 chrome_picker <- function(input_id, label, color = "#112446", disable_alpha  = FALSE, inline = FALSE, width = NULL) {
@@ -73,7 +103,22 @@ chrome_picker <- function(input_id, label, color = "#112446", disable_alpha  = F
 #' # Shiny example
 #' if (interactive()) {
 #'
+#'   library(shiny)
 #'
+#'   ui <- fluidPage(
+#'     tags$h2("Photoshop picker color"),
+#'     photoshop_picker("inline", "Pick!", inline = TRUE),
+#'     verbatimTextOutput("res_inline"),
+#'     photoshop_picker("btn", "Pick!", inline = FALSE),
+#'     verbatimTextOutput("res_btn")
+#'   )
+#'
+#'   server <- function(input, output, session) {
+#'     output$res_inline <- renderPrint(input$inline)
+#'     output$res_btn <- renderPrint(input$btn)
+#'   }
+#'
+#'   shinyApp(ui, server)
 #'
 #' }
 photoshop_picker <- function(input_id, label, color = "#112446",
@@ -109,7 +154,22 @@ photoshop_picker <- function(input_id, label, color = "#112446",
 #' # Shiny example
 #' if (interactive()) {
 #'
+#'   library(shiny)
 #'
+#'   ui <- fluidPage(
+#'     tags$h2("Block picker color"),
+#'     block_picker("inline", "Pick!", inline = TRUE),
+#'     verbatimTextOutput("res_inline"),
+#'     block_picker("btn", "Pick!", inline = FALSE),
+#'     verbatimTextOutput("res_btn")
+#'   )
+#'
+#'   server <- function(input, output, session) {
+#'     output$res_inline <- renderPrint(input$inline)
+#'     output$res_btn <- renderPrint(input$btn)
+#'   }
+#'
+#'   shinyApp(ui, server)
 #'
 #' }
 block_picker <- function(input_id, label, color = "#112446",
@@ -143,7 +203,22 @@ block_picker <- function(input_id, label, color = "#112446",
 #' # Shiny example
 #' if (interactive()) {
 #'
+#'   library(shiny)
 #'
+#'   ui <- fluidPage(
+#'     tags$h2("Twitter picker color"),
+#'     twitter_picker("inline", "Pick!", inline = TRUE),
+#'     verbatimTextOutput("res_inline"),
+#'     twitter_picker("btn", "Pick!", inline = FALSE),
+#'     verbatimTextOutput("res_btn")
+#'   )
+#'
+#'   server <- function(input, output, session) {
+#'     output$res_inline <- renderPrint(input$inline)
+#'     output$res_btn <- renderPrint(input$btn)
+#'   }
+#'
+#'   shinyApp(ui, server)
 #'
 #' }
 twitter_picker <- function(input_id, label, color = "#112446",
@@ -177,7 +252,22 @@ twitter_picker <- function(input_id, label, color = "#112446",
 #' # Shiny example
 #' if (interactive()) {
 #'
+#'   library(shiny)
 #'
+#'   ui <- fluidPage(
+#'     tags$h2("Github picker color"),
+#'     github_picker("inline", "Pick!", inline = TRUE),
+#'     verbatimTextOutput("res_inline"),
+#'     github_picker("btn", "Pick!", inline = FALSE),
+#'     verbatimTextOutput("res_btn")
+#'   )
+#'
+#'   server <- function(input, output, session) {
+#'     output$res_inline <- renderPrint(input$inline)
+#'     output$res_btn <- renderPrint(input$btn)
+#'   }
+#'
+#'   shinyApp(ui, server)
 #'
 #' }
 github_picker <- function(input_id, label, color = "#112446",
@@ -210,7 +300,22 @@ github_picker <- function(input_id, label, color = "#112446",
 #' # Shiny example
 #' if (interactive()) {
 #'
+#'   library(shiny)
 #'
+#'   ui <- fluidPage(
+#'     tags$h2("Compact picker color"),
+#'     compact_picker("inline", "Pick!", inline = TRUE),
+#'     verbatimTextOutput("res_inline"),
+#'     compact_picker("btn", "Pick!", inline = FALSE),
+#'     verbatimTextOutput("res_btn")
+#'   )
+#'
+#'   server <- function(input, output, session) {
+#'     output$res_inline <- renderPrint(input$inline)
+#'     output$res_btn <- renderPrint(input$btn)
+#'   }
+#'
+#'   shinyApp(ui, server)
 #'
 #' }
 compact_picker <- function(input_id, label, color = "#112446",
@@ -244,7 +349,22 @@ compact_picker <- function(input_id, label, color = "#112446",
 #' # Shiny example
 #' if (interactive()) {
 #'
+#'   library(shiny)
 #'
+#'   ui <- fluidPage(
+#'     tags$h2("Circle picker color"),
+#'     circle_picker("inline", "Pick!", inline = TRUE),
+#'     verbatimTextOutput("res_inline"),
+#'     circle_picker("btn", "Pick!", inline = FALSE),
+#'     verbatimTextOutput("res_btn")
+#'   )
+#'
+#'   server <- function(input, output, session) {
+#'     output$res_inline <- renderPrint(input$inline)
+#'     output$res_btn <- renderPrint(input$btn)
+#'   }
+#'
+#'   shinyApp(ui, server)
 #'
 #' }
 circle_picker <- function(input_id, label, color = "#112446",
@@ -279,7 +399,22 @@ circle_picker <- function(input_id, label, color = "#112446",
 #' # Shiny example
 #' if (interactive()) {
 #'
+#'   library(shiny)
 #'
+#'   ui <- fluidPage(
+#'     tags$h2("Hue picker color"),
+#'     hue_picker("inline", "Pick!", inline = TRUE),
+#'     verbatimTextOutput("res_inline"),
+#'     hue_picker("btn", "Pick!", inline = FALSE),
+#'     verbatimTextOutput("res_btn")
+#'   )
+#'
+#'   server <- function(input, output, session) {
+#'     output$res_inline <- renderPrint(input$inline)
+#'     output$res_btn <- renderPrint(input$btn)
+#'   }
+#'
+#'   shinyApp(ui, server)
 #'
 #' }
 hue_picker <- function(input_id, label, color = "#112446",
@@ -358,7 +493,22 @@ swatches_picker <- function(input_id, label, color = "#112446",
 #' # Shiny example
 #' if (interactive()) {
 #'
+#'   library(shiny)
 #'
+#'   ui <- fluidPage(
+#'     tags$h2("Slider picker color"),
+#'     slider_picker("inline", "Pick!", inline = TRUE),
+#'     verbatimTextOutput("res_inline"),
+#'     slider_picker("btn", "Pick!", inline = FALSE),
+#'     verbatimTextOutput("res_btn")
+#'   )
+#'
+#'   server <- function(input, output, session) {
+#'     output$res_inline <- renderPrint(input$inline)
+#'     output$res_btn <- renderPrint(input$btn)
+#'   }
+#'
+#'   shinyApp(ui, server)
 #'
 #' }
 slider_picker <- function(input_id, label, color = "#112446",

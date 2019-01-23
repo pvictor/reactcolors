@@ -35,7 +35,22 @@ photoshop_picker("id", "Pick!", inline = TRUE)
 # Shiny example
 if (interactive()) {
 
+  library(shiny)
 
+  ui <- fluidPage(
+    tags$h2("Photoshop picker color"),
+    photoshop_picker("inline", "Pick!", inline = TRUE),
+    verbatimTextOutput("res_inline"),
+    photoshop_picker("btn", "Pick!", inline = FALSE),
+    verbatimTextOutput("res_btn")
+  )
+
+  server <- function(input, output, session) {
+    output$res_inline <- renderPrint(input$inline)
+    output$res_btn <- renderPrint(input$btn)
+  }
+
+  shinyApp(ui, server)
 
 }
 }

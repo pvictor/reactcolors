@@ -14,7 +14,7 @@ library(shiny)
 function(input, output, session) {
 
   lapply(
-    X = c("chrome", "compact", "circle", "block"),
+    X = c("chrome", "compact", "circle", "block", "photoshop", "sketch", "twitter", "swatches"),
     FUN = function(x) {
 
       output[[paste0(x, "_res_inline")]] <- renderPrint({

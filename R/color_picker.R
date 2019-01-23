@@ -37,7 +37,9 @@ color_picker <- function(color = "#112446", ...,
 
   options <- list(color = color)
   if (!is.null(input_id)) {
-    options$onChangeComplete <- JS(sprintf("function(color, event) {Shiny.setInputValue('%s', color.hex);}", input_id))
+    options$onChangeComplete <- JS(sprintf(
+      "function(color, event) { if (HTMLWidgets.shinyMode) { Shiny.setInputValue('%s', color.hex); } }", input_id)
+    )
   }
   options <- modifyList(options, list(...))
 

@@ -311,7 +311,22 @@ hue_picker <- function(input_id, label, color = "#112446",
 #' # Shiny example
 #' if (interactive()) {
 #'
+#'   library(shiny)
 #'
+#'   ui <- fluidPage(
+#'     tags$h2("Swatch picker color"),
+#'     swatches_picker("inline", "Pick!", inline = TRUE),
+#'     verbatimTextOutput("res_inline"),
+#'     swatches_picker("btn", "Pick!", inline = FALSE),
+#'     verbatimTextOutput("res_btn")
+#'   )
+#'
+#'   server <- function(input, output, session) {
+#'     output$res_inline <- renderPrint(input$inline)
+#'     output$res_btn <- renderPrint(input$btn)
+#'   }
+#'
+#'   shinyApp(ui, server)
 #'
 #' }
 swatches_picker <- function(input_id, label, color = "#112446",
@@ -334,7 +349,7 @@ swatches_picker <- function(input_id, label, color = "#112446",
 #'
 #' @template params
 #'
-# @export
+#' @noRd
 #'
 #' @examples
 #' # See picker in Viewer (or browser)

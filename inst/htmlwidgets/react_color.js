@@ -17364,8 +17364,6 @@ function (_React$Component) {
   _createClass(ReactColorBtn, [{
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       var styles = reactcss__WEBPACK_IMPORTED_MODULE_1___default()({
         'default': {
           color: {
@@ -17390,11 +17388,9 @@ function (_React$Component) {
           }
         }
       });
-      var children = this.props.children;
-      var childrenWithProps = react__WEBPACK_IMPORTED_MODULE_0___default.a.Children.map(children, function (child) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.cloneElement(child, {
-          onChange: _this2.handleChange
-        });
+      var childrenWithProps = react__WEBPACK_IMPORTED_MODULE_0___default.a.cloneElement(this.props.children, {
+        onChange: this.handleChange,
+        color: this.state.color
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         class: "form-group shiny-input-container shiny-input-container-inline"

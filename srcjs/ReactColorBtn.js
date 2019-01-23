@@ -51,11 +51,8 @@ class ReactColorBtn extends React.Component {
         },
       },
     });
-    const { children } = this.props;
 
-    const childrenWithProps = React.Children.map(children, child =>
-      React.cloneElement(child, { onChange: this.handleChange })
-    );
+    const childrenWithProps = React.cloneElement(this.props.children, { onChange: this.handleChange, color: this.state.color  });
     return (
       <span class="form-group shiny-input-container shiny-input-container-inline">
         <button onClick={ this.handleClick } class="btn btn-default">{this.props.label}<span style={ styles.color }></span></button>

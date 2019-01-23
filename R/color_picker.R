@@ -49,6 +49,7 @@ color_picker <- function(color = "#112446", ...,
     varArgs = list(
       label = label,
       color = color,
+      inputId = input_id,
       component(
         name = picker,
         varArgs = options

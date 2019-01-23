@@ -4,10 +4,15 @@ import reactCSS from 'reactcss';
 import { AlphaPicker, BlockPicker, ChromePicker, CirclePicker, CompactPicker, GithubPicker, HuePicker, MaterialPicker, PhotoshopPicker, SketchPicker, SliderPicker, SwatchesPicker, TwitterPicker } from 'react-color';
 
 class ReactColorBtn extends React.Component {
+
   state = {
     displayColorPicker: false,
     color: this.props.color,
   };
+
+  setInputValueStart = () => {
+    window.Shiny.setInputValue('{this.props.inputId}', '{this.props.color}');
+  }
 
   handleClick = () => {
     this.setState({ displayColorPicker: !this.state.displayColorPicker })

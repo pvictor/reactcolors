@@ -17336,6 +17336,10 @@ function (_React$Component) {
       color: _this.props.color
     });
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "setInputValueStart", function () {
+      window.Shiny.setInputValue('{this.props.inputId}', '{this.props.color}');
+    });
+
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleClick", function () {
       _this.setState({
         displayColorPicker: !_this.state.displayColorPicker

@@ -4,3 +4,6 @@
 ^node_modules$
 ^srcjs$
 ^imgs$
+^package\.json$
+^webpack\.config\.js$
+^yarn\.lock$

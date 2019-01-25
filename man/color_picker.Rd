@@ -22,6 +22,8 @@ color_picker(color = "#112446", ..., picker = c("SketchPicker",
 
 \item{label}{Label for the button.}
 
+\item{inline}{Display the widget inline or when a button is clicked.}
+
 \item{width, height}{Width and height for the widget.}
 }
 \description{

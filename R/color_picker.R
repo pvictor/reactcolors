@@ -5,8 +5,9 @@
 #' @param color Default color.
 #' @param ... Arguments passed to the picker.
 #' @param picker Style of the picker.
-#' @param label Label for the button.
 #' @param input_id Widget id to retrieve value server-side.
+#' @param label Label for the button.
+#' @param inline Display the widget inline or when a button is clicked.
 #' @param width,height Width and height for the widget.
 #'
 #'

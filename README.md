@@ -3,6 +3,7 @@
 > R interface to React library [react-color](https://casesandberg.github.io/react-color/). Powered by [reactR](https://react-r.github.io/reactR/index.html)!
 
 [![Travis build status](https://travis-ci.org/pvictor/reactcolors.svg?branch=master)](https://travis-ci.org/pvictor/reactcolors)
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
 
 ## Installation

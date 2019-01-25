@@ -50,3 +50,12 @@ shinyApp(ui, server)
 
 ![](imgs/chrome.png)
 ![](imgs/swatches.png)
+
+
+Launch the demo with:
+
+```r
+app_demo()
+```
+
+
